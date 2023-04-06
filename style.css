@@ -4,10 +4,6 @@
   box-sizing: border-box;
 }
 
-li img {
-  width: 64px;
-}
-
 ul,
 p {
   margin: 0;
@@ -23,7 +19,9 @@ svg {
   height: 30px;
   margin: 10px 0;
 }
+
 /* ===========contato */
+
 .contat {
   position: fixed;
   top: 37%;
@@ -32,11 +30,14 @@ svg {
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
+
 /* ================= header */
+
 .header-conteiner {
   background: #0c0b0b9d;
   height: 50px;
 }
+
 .header-conteiner,
 nav ul {
   display: flex;
@@ -44,19 +45,20 @@ nav ul {
   align-items: center;
   padding: 0 1rem;
 }
+
 .header-conteiner nav ul {
   gap: 2rem;
 }
+
 /* ================== inicio do site */
+
 .section-profile {
   background: #25232386;
   height: 100vh;
   width: 100%;
-
   display: flex;
   align-items: center;
   gap: 0 12rem;
-  
 }
 
 .section-profile div > h1 {
@@ -67,9 +69,13 @@ nav ul {
 .section-profile img {
   border-radius: 1000px;
   width: 30%;
-  margin-left: 6rem ;
+  height: 60%;
+  margin-top: -6rem;
+  margin-left: 6rem;
 }
+
 /* ============== infos */
+
 .infos {
   padding: 4rem 0;
   display: flex;
@@ -79,13 +85,13 @@ nav ul {
 
 .skills {
   width: 80%;
-
   gap: 40px;
   display: flex;
 }
 
 .skills h3 {
   text-align: center;
+  height: 100px;
 }
 
 .skills li {
@@ -103,32 +109,56 @@ nav ul {
   align-items: center;
   gap: 30px;
 }
+
 .skills figure img {
   width: 64px;
 }
+
 .skills .soft-skill figure {
   justify-content: end;
   text-align: left;
 }
+
 /* ============= Projects */
+
 .projects {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 100px;
+  background: #0c0b0b9d;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100px;
 }
+
 .projects h2 {
-    text-align: center;
+  text-align: center;
 }
-.projects div  {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 70px;
-    margin: auto;
+
+.projects > .conteiner-img{
+  display: flex;
+  flex-wrap: wrap;
+  margin: -30px 0;
+  justify-content: space-evenly;
+  width: 80%;
 }
+
+.conteiner-img > div {
+  margin: -10px 40px;
+}
+
 .projects figure {
- width: 300px;
+  width: 240px;
+  margin: 0;
 }
+
 .projects figure img {
- width: 100%;
+  width: 100%;
+  opacity: 0.8;
+}
+
+.conteiner-img figcaption{
+  position: relative;
+  text-align: center;
+  top: -40px;
+  height: 50px;
 }
