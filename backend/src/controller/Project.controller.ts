@@ -30,4 +30,16 @@ export default class ProjectController {
             }
         }
     }
+    public async create(req: Request, res: Response) {
+        try {
+            console.log(req.body);
+            
+            const {status, data } = await this.projectService.create(req.body);
+            return res.status(mapStatusHTTP(status)).json(data);
+        } catch (error) {
+            if (error instanceof Error) {
+                res.status(500).json({error: error.message});
+            }
+        }
+    }
 }

@@ -1,5 +1,16 @@
+type Id = number
+
 interface IProject {
-  id: number
+  id: Id
+  name: string;
+  Image: string;
+  deplay: string;
+  github: string;
+  tag: number[];
+  description: string;
+  dificulty: string;
+}
+interface IProjectCreate {
   name: string;
   Image: string;
   deplay: string;
@@ -9,4 +20,7 @@ interface IProject {
   dificulty: string;
 }
 
+export {
+  IProjectCreate,
+}
 export default IProject;

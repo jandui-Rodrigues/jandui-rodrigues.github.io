@@ -18,4 +18,9 @@ export default class ProjectService {
         const project = await this.projectModel.findById(id);
         return {status: 'SUCCESSFUL',data: project }
     }
+
+    async create(project: IProject):Promise<ServiceResponse<IProject>> {
+        const projectCreated = await this.projectModel.create(project);
+        return {status: 'CREATED',data: projectCreated }
+    }
 }
