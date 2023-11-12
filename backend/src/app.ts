@@ -1,4 +1,5 @@
 import express from 'express';
+import router from './Routes';
 
 class App {
   public app: express.Express;
@@ -8,6 +9,7 @@ class App {
 
     this.config();
     this.app.use(express.json());
+    this.routes();
     // Não remover essa rota
     this.app.get('/', (req, res) => res.json({ ok: true }));
   }
@@ -28,9 +30,11 @@ class App {
     this.app.listen(PORT, () => console.log(`Running on port ${PORT}`));
   }
 
+  private routes(): void {
+    this.app.use(router);
+  }
 }
 
 export { App };
 
-// Essa segunda exportação é estratégica, e a execução dos testes de cobertura depende dela
 export const { app } = new App();
