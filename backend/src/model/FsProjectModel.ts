@@ -35,4 +35,13 @@ export default class FsProjectModel {
     await writeFile<IProject>(projectsPath, projects);
     return projectUpdated;
   }
+
+  async delete(id: number): Promise<number> {
+    const projects = await readFile(projectsPath) as IProject[];
+    const projectIndex = projects.findIndex((project: IProject) => project.id === id);
+    if (projectIndex === -1) throw new Error("Project not found");
+    projects.splice(projectIndex, 1);
+    await writeFile<IProject>(projectsPath, projects);
+    return projectIndex + 1
+  }
 }

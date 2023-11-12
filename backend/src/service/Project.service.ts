@@ -26,6 +26,11 @@ export default class ProjectService {
 
     async update(id: number, project: IProject):Promise<ServiceResponse<IProject>> {
         const projectUpdate = await this.projectModel.update(id, project);
-        return {status: 'SUCCESSFUL',data: projectUpdate }
+        return {status: 'SUCCESSFUL', data: projectUpdate }
+    }
+
+    async remove(id: number):Promise<ServiceResponse<{message: string}>> {
+        const projectRemoved = await this.projectModel.delete(id);
+        return {status: 'SUCCESSFUL', data:{ message: `Successfull Remove ${projectRemoved}`} }
     }
 }

@@ -20,4 +20,9 @@ export default class ProjectModel implements IProjectModel {
         const projects = await this.model.update(id, project);
         return projects;
     }
+
+    async delete(id: number): Promise<number> {
+        const status = await this.model.delete(id);
+        return status;
+    }
 }

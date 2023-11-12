@@ -25,6 +25,10 @@ export default class ProjectRouter {
       "/:id",
       (req, res) => this.productsController.update(req, res),
     );
+    this.router.delete(
+      "/:id",
+      (req, res) => this.productsController.remove(req, res),
+    );
     return this.router;
   }
 }

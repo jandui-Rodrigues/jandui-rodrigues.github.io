@@ -55,4 +55,16 @@ export default class ProjectController {
       }
     }
   } 
+
+  public async remove(req: Request, res: Response) {
+    try {
+      const { id } = req.params;
+      const { status, data } = await this.projectService.remove(Number(id));
+      return res.status(mapStatusHTTP(status)).json(data);
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(500).json({ error: error.message });
+      }
+    }
+  }
 }
