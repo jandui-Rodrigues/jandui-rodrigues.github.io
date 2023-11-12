@@ -13,4 +13,9 @@ export default class ProjectService {
         const projects = await this.projectModel.findAll();
         return {status: 'SUCCESSFUL',data: projects }
     }
+    
+    async findByid(id: number):Promise<ServiceResponse<IProject>> {
+        const project = await this.projectModel.findById(id);
+        return {status: 'SUCCESSFUL',data: project }
+    }
 }

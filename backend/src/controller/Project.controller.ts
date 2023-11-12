@@ -12,12 +12,22 @@ export default class ProjectController {
     public async findAll(_req: Request, res: Response) {
         try {
             const {status, data } = await this.projectService.findAll();
+            return res.status(mapStatusHTTP(status)).json(data);
+        } catch (error) {
+            if (error instanceof Error) {
+                res.status(500).json({error: error.message});
+            }
+        }
+    }
+    public async findById(req: Request, res: Response) {
+        try {
+            const { id } = req.params; 
+            const {status, data } = await this.projectService.findByid(Number(id));
         return res.status(mapStatusHTTP(status)).json(data);
         } catch (error) {
             if (error instanceof Error) {
                 res.status(500).json({error: error.message});
             }
-            
         }
     }
 }

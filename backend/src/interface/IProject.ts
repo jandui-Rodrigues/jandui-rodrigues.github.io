@@ -1,4 +1,5 @@
 interface IProject {
+  id: number
   name: string;
   Image: string;
   deplay: string;

@@ -9,7 +9,8 @@ export default class ProjectRouter {
     }
 
     buildRoutes() {
-        this.router.use('/', (req, res) => this.productsController.findAll(req, res));
-    return this.router;
+       this.router.use('/:id', (req, res) => this.productsController.findById(req, res));
+       this.router.use('/', (req, res) => this.productsController.findAll(req, res));
+       return this.router;
     }
 }
