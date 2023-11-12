@@ -21,6 +21,10 @@ export default class ProjectRouter {
       "/",
       (req, res) => this.productsController.findAll(req, res),
     );
+    this.router.put(
+      "/:id",
+      (req, res) => this.productsController.update(req, res),
+    );
     return this.router;
   }
 }

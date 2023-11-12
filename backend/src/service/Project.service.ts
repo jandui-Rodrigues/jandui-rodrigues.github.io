@@ -23,4 +23,9 @@ export default class ProjectService {
         const projectCreated = await this.projectModel.create(project);
         return {status: 'CREATED',data: projectCreated }
     }
+
+    async update(id: number, project: IProject):Promise<ServiceResponse<IProject>> {
+        const projectUpdate = await this.projectModel.update(id, project);
+        return {status: 'SUCCESSFUL',data: projectUpdate }
+    }
 }

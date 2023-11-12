@@ -25,4 +25,14 @@ export default class FsProjectModel {
     await writeFile<IProject>(projectsPath, projects);
     return projectWithId;
   }
+
+  async update(id: number, project: IProjectCreate): Promise<IProject> {
+    const projects = await readFile(projectsPath) as IProject[];
+    const projectIndex = projects.findIndex((project: IProject) => project.id === id);
+    if (projectIndex === -1) throw new Error("Project not found");
+    const projectUpdated = { id, ...project };
+    projects[projectIndex] = projectUpdated;
+    await writeFile<IProject>(projectsPath, projects);
+    return projectUpdated;
+  }
 }

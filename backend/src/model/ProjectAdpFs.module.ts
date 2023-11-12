@@ -16,4 +16,8 @@ export default class ProjectModel implements IProjectModel {
         const projects = await this.model.create(project);
         return projects;
     }
+    async update(id: number, project: IProject): Promise<IProject> {
+        const projects = await this.model.update(id, project);
+        return projects;
+    }
 }
